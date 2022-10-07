@@ -13,7 +13,9 @@ const styles =StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between"
       },
-    
+      itemTask:{
+        flexDirection: "row",
+      },
       square: {
         width: 48,
         height: 36,
@@ -23,5 +25,20 @@ const styles =StyleSheet.create({
         justifyContent: 'center',
     
       },
+      even:{
+        backgroundColor:"red"
+
+      },
+      old:{
+        backgroundColor:"green"
+
+      },
+      content:{
+        textAlign:'center',
+        alignItems:'center',
+        paddingVertical:5,
+        paddingHorizontal:10,
+
+      }
 })
 export default styles;

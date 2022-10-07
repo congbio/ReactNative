@@ -1,14 +1,26 @@
-import { View, Text, TextInput } from 'react-native'
-import React from 'react'
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
+import React, { useState } from 'react'
 import styles from './style'
-const Form = () => {
+const Form = (props) => {
+  const [task, setTask] = useState('')
+  const handAddTask = () => {
+    if (task.length == 0) {
+      alert("gia tri o in put khong duoc rong");
+      return false;
+    }
+    props.onAddTask(task);
+    setTask('');
+
+  }
+
   return (
     <View style={styles.addTask}>
-      <TextInput style={styles.input} />
-      <View style={styles.iconWrapper}>
-        <Text  style={styles.icon}>+</Text>
-
-      </View>
+      <TextInput onChangeText={(text) => setTask(text)} style={styles.input} value = {task} />
+      <TouchableOpacity onPress={handAddTask} >
+        <View style={styles.iconWrapper}>
+          <Text style={styles.icon}>+</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   )
 }
